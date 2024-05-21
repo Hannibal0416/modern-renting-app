@@ -18,17 +18,17 @@ function App() {
 
   return (
     <div>
-      <HeaderBar />
-        <div>
-          <Router>
-            <Routes>
-                <Route element={<Home />} path={'/'}></Route>
-                <Route element={<Profile />} path='/profile'></Route>
-                <Route element={<Collection />} path='/collection'></Route>
-                <Route element={<Search />} path='/search'></Route>
-            </Routes>
-          </Router>
-        </div>
+      <HeaderBar title='Modern Retailing'/>
+      <div>
+        <Router>
+          <Routes>
+              <Route element={<Home />} path={'/'}></Route>
+              <Route element={<Profile />} path='/profile'></Route>
+              <Route element={<Collection />} path='/collection'></Route>
+              <Route element={<Search />} path='/search'></Route>
+          </Routes>
+        </Router>
+      </div>
       <FooterBar />
     </div>
   )
