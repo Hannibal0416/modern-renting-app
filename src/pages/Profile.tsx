@@ -19,20 +19,20 @@ const Profile: React.FC = () => {
               <div className="flex">
                 <div className="mb-6 lg:mb-10">
                   <div className="flex flex-row space-x-2">
-                    <span className="font-normal">會員中心</span>
+                    <span className="font-normal">Menber</span>
                     <span className="font-normal">&gt;</span>
-                    <span className="font-normal">編輯個人資料</span>
+                    <span className="font-normal">Profile</span>
                   </div>
-                  <h3 className="mt-1 font-bold text-2xl">編輯個人資料</h3>
+                  <h3 className="mt-1 font-bold text-2xl">Profile</h3>
                 </div>
               </div>
               <div data-v-7d80c5b3="" className="wrapper">
                 <div data-v-cc59f552="" data-v-7d80c5b3="" className="pb-10">
-                  <h3 data-v-cc59f552="">姓名</h3>
+                  <h3 data-v-cc59f552="">Name</h3>
                   <div data-v-cc59f552="" className="flex items-center justify-between">
                     <h4 data-v-cc59f552="" className="pr-10 text-neutral-400">lin sony</h4>
                     <div data-v-cc59f552="" className="relative">
-                      <a data-v-cc59f552="" className="font-medium bg-transparent font-sm hover:text-primary-hover active:text-primary-click text-primary inline-flex items-center justify-center cursor-pointer whitespace-nowrap select-none text-center truncate">編輯</a>
+                      <a data-v-cc59f552="" className="font-medium bg-transparent font-sm hover:text-primary-hover active:text-primary-click text-primary inline-flex items-center justify-center cursor-pointer whitespace-nowrap select-none text-center truncate">Edit</a>
                     </div>
                   </div>
                 </div>
@@ -42,37 +42,47 @@ const Profile: React.FC = () => {
                   <div data-v-cc59f552="" className="flex items-center justify-between">
                     <h4 data-v-cc59f552="" className="pr-10 text-neutral-400">s***n@taodigitalusa.com</h4>
                     <div data-v-cc59f552="" className="relative">
-                      <a data-v-cc59f552="" className="font-medium bg-transparent font-sm hover:text-primary-hover active:text-primary-click text-primary inline-flex items-center justify-center cursor-pointer whitespace-nowrap select-none text-center truncate">編輯</a>
+                      <a data-v-cc59f552="" className="font-medium bg-transparent font-sm hover:text-primary-hover active:text-primary-click text-primary inline-flex items-center justify-center cursor-pointer whitespace-nowrap select-none text-center truncate">Edit</a>
                     </div>
                   </div>
                 </div>
 
                 <div data-v-cc59f552="" data-v-7d80c5b3="" className="pb-10">
-                  <h3 data-v-cc59f552="">身分證</h3>
+                  <h3 data-v-cc59f552="">ID Number</h3>
                   <div data-v-cc59f552="" className="flex items-center justify-between">
                     <h4 data-v-cc59f552="" className="pr-10 text-neutral-400">***</h4>
                     <div data-v-cc59f552="" className="relative">
-                      <a data-v-cc59f552="" className="font-medium bg-transparent font-sm hover:text-primary-hover active:text-primary-click text-primary inline-flex items-center justify-center cursor-pointer whitespace-nowrap select-none text-center truncate">編輯</a>
+                      <a data-v-cc59f552="" className="font-medium bg-transparent font-sm hover:text-primary-hover active:text-primary-click text-primary inline-flex items-center justify-center cursor-pointer whitespace-nowrap select-none text-center truncate">Edit</a>
                     </div>
                   </div>
                 </div>
                 
                 <div data-v-cc59f552="" data-v-7d80c5b3="" className="pb-10">
-                  <h3 data-v-cc59f552="">護照號碼</h3>
+                  <h3 data-v-cc59f552="">Passport</h3>
                   <div data-v-cc59f552="" className="flex items-center justify-between">
                     <h4 data-v-cc59f552="" className="pr-10 text-neutral-400">***</h4>
                     <div data-v-cc59f552="" className="relative">
-                      <a data-v-cc59f552="" className="font-medium bg-transparent font-sm hover:text-primary-hover active:text-primary-click text-primary inline-flex items-center justify-center cursor-pointer whitespace-nowrap select-none text-center truncate">編輯</a>
+                      <a data-v-cc59f552="" className="font-medium bg-transparent font-sm hover:text-primary-hover active:text-primary-click text-primary inline-flex items-center justify-center cursor-pointer whitespace-nowrap select-none text-center truncate">Edit</a>
                     </div>
                   </div>
                 </div>
                 
                 <div data-v-cc59f552="" data-v-7d80c5b3="" className="pb-10">
-                  <h3 data-v-cc59f552="">出生日期</h3>
+                  <h3 data-v-cc59f552="">Birthday</h3>
                   <div data-v-cc59f552="" className="flex items-center justify-between">
                     <h4 data-v-cc59f552="" className="pr-10 text-neutral-400">1985-10-02</h4>
                     <div data-v-cc59f552="" className="relative">
-                      <a data-v-cc59f552="" className="font-medium bg-transparent font-sm hover:text-primary-hover active:text-primary-click text-primary inline-flex items-center justify-center cursor-pointer whitespace-nowrap select-none text-center truncate">編輯</a></div></div></div><div data-v-cc59f552="" data-v-7d80c5b3="" className="pb-10"><h3 data-v-cc59f552="">手機</h3><div data-v-cc59f552="" className="flex items-center justify-between"><h4 data-v-cc59f552="" className="pr-10 text-neutral-400"> </h4><div data-v-cc59f552="" className="relative"><a data-v-cc59f552="" className="font-medium bg-transparent font-sm hover:text-primary-hover active:text-primary-click text-primary inline-flex items-center justify-center cursor-pointer whitespace-nowrap select-none text-center truncate">編輯</a>
+                      <a data-v-cc59f552="" className="font-medium bg-transparent font-sm hover:text-primary-hover active:text-primary-click text-primary inline-flex items-center justify-center cursor-pointer whitespace-nowrap select-none text-center truncate">Edit</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div data-v-cc59f552="" data-v-7d80c5b3="" className="pb-10">
+                  <h3 data-v-cc59f552="">Mobile Number</h3>
+                  <div data-v-cc59f552="" className="flex items-center justify-between">
+                    <h4 data-v-cc59f552="" className="pr-10 text-neutral-400"> </h4>
+                    <div data-v-cc59f552="" className="relative">
+                      <a data-v-cc59f552="" className="font-medium bg-transparent font-sm hover:text-primary-hover active:text-primary-click text-primary inline-flex items-center justify-center cursor-pointer whitespace-nowrap select-none text-center truncate">Edit</a>
                     </div>
                   </div>
                 </div>

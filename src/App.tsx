@@ -30,15 +30,13 @@ function App() {
       <div>
         <HeaderBar title='Modern Retailing'/>
         <div>
-          <Router>
-            <Routes>
-                <Route element={<Home />} path={'/'}></Route>
-                <Route element={<Profile />} path='/profile'></Route>
-                <Route element={<Collection />} path='/collection'></Route>
-                <Route element={<Search />} path='/search'></Route>
-                <Route element={<Detail />} path='/detail/:id'></Route>
-            </Routes>
-          </Router>
+          <Routes>
+              <Route element={<Home />} path={'/'}></Route>
+              <Route element={<Profile />} path='/profile'></Route>
+              <Route element={<Collection />} path='/collection'></Route>
+              <Route element={<Search />} path='/search'></Route>
+              <Route element={<Detail />} path='/detail/:id'></Route>
+          </Routes>
         </div>
         <FooterBar />
       </div>

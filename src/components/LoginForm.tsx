@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import appleLogo from "../assets/apple.png";
+import googleLogo from "../assets/google.png";
+import facebookLogo from "../assets/facebook.png";
+
 const Area = styled.div`
   height: 100%;
   left: 0;
@@ -41,6 +45,17 @@ const InputEmail = styled.input`
   margin-top: 5px;
 `
 
+const BtnOauth = styled.button`
+  position: relative;
+
+  img {
+    position: absolute;
+    height: 20px;
+    left: 10px;
+    top: 10px;
+  }
+`
+
 // Define a type for the component props
 type LoginFormProps = {
   open: boolean;
@@ -49,7 +64,6 @@ type LoginFormProps = {
 };
 
 const LoginForm: React.FC<LoginFormProps> = ({ open, closeModal, onLogin }) => {
-
     const [ email, setEmail ] = useState('')
 
     const emailOnChange = (event: any) => {
@@ -70,7 +84,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ open, closeModal, onLogin }) => {
             <div className="rounded-2xl bg-white shadow border border-neutral-300 w-full relative z-30">
               <div className="flex flex-col items-center mt-3">
                 <div>
-                  <p>登入或註冊</p>
+                  <p>Log in or Sign up</p>
                 </div>
               </div>
 
@@ -86,28 +100,37 @@ const LoginForm: React.FC<LoginFormProps> = ({ open, closeModal, onLogin }) => {
                         </div>
                       </div>
                       
-                      <InputEmail type="email" autoComplete="username" placeholder="請輸入電子郵件" value={email} onChange={emailOnChange} />
+                      <InputEmail type="email" autoComplete="username" placeholder="Please enter your email address" value={email} onChange={emailOnChange} />
                       
                       <div className="mt-1 text-sm text-neutral-400" data-v-492925a6="">
                         <span></span>
                       </div>
                     </label>
                       
-                    <button onClick={_onLogin} style={{background: "rgb(0 49 104)"}} className="my-6 font-medium bg-primary text-white px-5 py-1 rounded-full block w-full whitespace-nowrap select-none text-center truncate" >繼續</button>
+                    <button onClick={_onLogin} style={{background: "rgb(0 49 104)"}} className="my-6 font-medium bg-primary text-white px-5 py-1 rounded-full block w-full whitespace-nowrap select-none text-center truncate" >Continue</button>
                     
                     <hr className="divider" />
                                 
-                    <button onClick={_onLogin} className="flex justify-center items-center border border-neutral-800 w-full py-2 my-6 rounded-lg relative">
-                      <p className="text-base">繼續使用 Apple 登入</p>
-                    </button>
+                    <BtnOauth onClick={_onLogin} className="flex justify-center items-center border border-neutral-800 w-full py-2 my-6 rounded-lg relative">
+                      <img src={appleLogo} />
+                      <p className="text-base">
+                      Continue with Apple
+                      </p>
+                    </BtnOauth>
 
-                    <button onClick={_onLogin} className="flex justify-center items-center border border-neutral-800 w-full py-2 my-6 rounded-lg relative">
-                      <p className="text-base">繼續使用 Google 登入</p>
-                    </button>
+                    <BtnOauth onClick={_onLogin} className="flex justify-center items-center border border-neutral-800 w-full py-2 my-6 rounded-lg relative">
+                      <img src={googleLogo} />
+                      <p className="text-base">
+                      Continue with Google
+                      </p>
+                    </BtnOauth>
 
-                    <button onClick={_onLogin} className="flex justify-center items-center border border-neutral-800 w-full py-2 my-6 rounded-lg relative">
-                      <p className="text-base">繼續使用 Facebook 登入</p>
-                    </button>
+                    <BtnOauth onClick={_onLogin} className="flex justify-center items-center border border-neutral-800 w-full py-2 my-6 rounded-lg relative">
+                      <img src={facebookLogo} />
+                      <p className="text-base">
+                      Continue with Facebook
+                      </p>
+                    </BtnOauth>
                   </div>
                 </div>
               </div>
