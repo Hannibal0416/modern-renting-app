@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
 import LoginForm from './LoginForm';
 import UserButton from './UserButton';
+
+const LogoH1 = styled.h1`
+  font-weight: 600;
+  font-size: 20px;
+  color: #2276a9;
+}
+`
 
 // Define a type for the component props
 type HeaderBarProps = {
@@ -15,7 +23,7 @@ const HeaderBar: React.FC<HeaderBarProps> = ({ title }) => {
   return (
     <>
       <div className="bg-white text-gray-800 text-xl text-left py-4 px-6 fixed top-0 left-0 right-0 z-10 shadow-md">
-        <h1 className="font-semibold">{title}</h1>
+        <LogoH1 className="font-semibold poetsen-one-regular">{title}</LogoH1>
 
         {isLogin &&
           <UserButton />
