@@ -159,12 +159,12 @@ export default [
       return {
         id: 'test1',
         imageUri: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Compare-Model-Y-RWD.png",
-        name: `model ${query.id}`,
+        name: `Tesla Model S ${query.id}`,
         color: 'red',
         seats: 4,
         fuelType: "electric",
         productionYear: 2024,
-        rentPrice: 1000,
+        rentPrice: '$1000',
         createdAt: "2024-05-22T11:06:22.124Z"
       };
     },
