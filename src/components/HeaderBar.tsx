@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
 
 import LoginForm from './LoginForm';
 import UserButton from './UserButton';
@@ -33,8 +34,20 @@ type HeaderBarProps = {
 //style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(1206px, 44px);"
 const HeaderBar: React.FC<HeaderBarProps> = ({ title }) => {
   const [ open, setOpen ] = useState(false)
-  const [ isLogin, setIsLogin ] = useState(false)
+  
+  const users = useSelector( state=> state.users)
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const isLogin = users.userName
+  const logOut = () => {
+    dispatch({
+      type: 'LOGOUT_USER',
+    })
+
+    localStorage.removeItem('access_token')
+    navigate("/")
+  }
 
   return (
     <>
@@ -43,11 +56,16 @@ const HeaderBar: React.FC<HeaderBarProps> = ({ title }) => {
           <span onClick={() => {navigate("/")}}  className="font-semibold poetsen-one-regular">{title}</span>
 
           {isLogin &&
-            <UserButton />
+            <UserButton users={users} logOut={logOut}/>
           }
 
           {!isLogin &&
-            <button color="black" style={{ outline: 0 }} onClick={() => setOpen(true)} className="absolute right-5 cursor-pointer border-0 active:border-0 hover:border-0">Sign Up / Log In</button>
+            <button
+              color="black"
+              style={{ outline: 0 }}
+              onClick={() => setOpen(true)}
+              className="absolute right-5 cursor-pointer border-0 active:border-0 hover:border-0"
+            >Sign Up / Log In</button>
           }
         </LogoH1>        
       </div>
@@ -56,7 +74,6 @@ const HeaderBar: React.FC<HeaderBarProps> = ({ title }) => {
         <LoginForm
           open={open}
           closeModal={() => setOpen(false)}
-          onLogin={() => setIsLogin(true)}
         />
       }
     </>

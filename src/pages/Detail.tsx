@@ -72,6 +72,8 @@ const CarDetail: React.FC = () => {
         <SpecBlock value={carDetails.fuelType} title="Fuel Type" />
         <SpecBlock value={carDetails.productionYear} title="Production Year" />
         <SpecBlock value={carDetails.rentPrice} title="Rent Price" />
+
+        {/* <button style={{padding: '5px', display: 'block', width: '100%', fontWeight: '900', background: '#999', color: '#fff', marginTop: '20px'}}>ADD TO CART</button> */}
       </div>
     </div>
   );

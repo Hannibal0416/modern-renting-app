@@ -6,8 +6,8 @@ export default [
     method: 'post',
     response: () => {
       return {
-        "access_token": "M68FDiPO_-Axxa7Woaq29THUOk3k_fB978fN8a9pu9q2ylTiRRYyELQTFUPB4tzy2YXp5wOfsZ_Js9qPTvOZtCpXVyQworUgzFJeEYI1rR6gsC5EBs7Lvqki478lUlCe",
-        "refresh_token": "bAGiwRqV-vXnZ3WxFLEAAT4b_5WukSXI8VoGpvPifrKdzQWE_wRUImKilegZvw_Zl9gXCLEm3jEF6gjhGcJ9FwdV1RvqyVwA_6hSzOr44HnliogMVDvIxSRr7ubHpB_e",
+        "access_token": "aaaaaaaa",
+        "refresh_token": "bbbbbbbb",
         "token_type": "Bearer",
         "expires_in": 17999,
       }
@@ -21,25 +21,22 @@ export default [
     },
   },
   {
-    url: '/api/users',
+    url: '/users',
     method: 'post',
     response: () => {
       return  {
-        "username": "Sony",
-        "email": "Sony.lin@taodigitalusa.com",
+        "username": "sony.lin",
+        "email": "sony.lin@cdk.com",
         "phone": "0988888888"
       };
     },
   },
   {
-    url: '/api/users',
+    url: '/users',
     method: 'put',
-    response: () => {
-      return  {
-        "username": "Sony",
-        "email": "Sony.lin@taodigitalusa.com",
-        "phone": "0988888888"
-      };
+    response: (a, b) => {
+      console.log(a, b)
+      return  a.body;
     },
   },
   {
@@ -47,8 +44,10 @@ export default [
     method: 'get',
     response: () => {
       return {
-        "username": "Sony",
-        "email": "Sony.lin@taodigitalusa.com",
+        "userName": "sony.lin",
+        'firstName': 'lin',
+        'lastName': 'sony',
+        "email": "sony.lin@cdk.com",
         "phone": "0988888888"
       };
     },
@@ -160,7 +159,7 @@ export default [
         id: 'test1',
         imageUri: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Compare-Model-Y-RWD.png",
         name: `Tesla Model S ${query.id}`,
-        color: 'red',
+        color: 'blue',
         seats: 4,
         fuelType: "electric",
         productionYear: 2024,

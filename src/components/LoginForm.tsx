@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
+import { useDispatch } from 'react-redux'
 
 import appleLogo from "../assets/apple.png";
 import googleLogo from "../assets/google.png";
@@ -45,34 +47,51 @@ const InputEmail = styled.input`
   margin-top: 5px;
 `
 
-const BtnOauth = styled.button`
-  position: relative;
-
-  img {
-    position: absolute;
-    height: 20px;
-    left: 10px;
-    top: 10px;
-  }
-`
-
 // Define a type for the component props
 type LoginFormProps = {
   open: boolean;
   closeModal: Function;
-  onLogin: Function;
 };
 
-const LoginForm: React.FC<LoginFormProps> = ({ open, closeModal, onLogin }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ open, closeModal }) => {
     const [ email, setEmail ] = useState('')
+    const [ password, setPassword ] = useState('')
+    const dispatch = useDispatch()
 
     const emailOnChange = (event: any) => {
         setEmail(event.target.value)
     }
 
-    const _onLogin = () => {
-        onLogin()
+    const pwdOnChange = (event: any) => {
+      setPassword(event.target.value)
+    }
+
+    const getUser = async () => {
+      await axios.get('/users')
+      .then(async (response) => {
+        dispatch({
+          type: 'GET_DATA',
+          data: response.data,
+        })
+      })
+      .catch( (error) => console.log(error))
+    }
+
+    const _onLogin = async () => {
+      await axios.post('/oauth2/token', { email, password })
+      .then(async (response) => {
+        const { access_token } = response.data
+
+        if (access_token) {
+          localStorage.setItem('access_token', access_token)
+          await getUser()
+        }
+
         closeModal()
+      })
+      .catch( (error) => console.log(error))
+
+        // onLogin()
     }
 
   return (
@@ -102,16 +121,30 @@ const LoginForm: React.FC<LoginFormProps> = ({ open, closeModal, onLogin }) => {
                       
                       <InputEmail type="email" autoComplete="username" placeholder="Please enter your email address" value={email} onChange={emailOnChange} />
                       
-                      <div className="mt-1 text-sm text-neutral-400" data-v-492925a6="">
+                      <div className="mt-1 text-sm text-neutral-400" >
+                        <span></span>
+                      </div>
+                    </label>
+
+                    <label className="label">
+                      <div className="flex">
+                        <div className="flex" >
+                          <label className="text-base">Password</label>
+                        </div>
+                      </div>
+                      
+                      <InputEmail type="password" placeholder="Please enter your password" value={password} onChange={pwdOnChange} />
+                      
+                      <div className="mt-1 text-sm text-neutral-400" >
                         <span></span>
                       </div>
                     </label>
                       
                     <button onClick={_onLogin} style={{background: "rgb(0 49 104)"}} className="my-6 font-medium bg-primary text-white px-5 py-1 rounded-full block w-full whitespace-nowrap select-none text-center truncate" >Continue</button>
-                    
+                                      
                     <hr className="divider" />
                                 
-                    <BtnOauth onClick={_onLogin} className="flex justify-center items-center border border-neutral-800 w-full py-2 my-6 rounded-lg relative">
+                    {/* <BtnOauth onClick={_onLogin} className="flex justify-center items-center border border-neutral-800 w-full py-2 my-6 rounded-lg relative">
                       <img src={appleLogo} />
                       <p className="text-base">
                       Continue with Apple
@@ -130,7 +163,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ open, closeModal, onLogin }) => {
                       <p className="text-base">
                       Continue with Facebook
                       </p>
-                    </BtnOauth>
+                    </BtnOauth> */}
+
                   </div>
                 </div>
               </div>

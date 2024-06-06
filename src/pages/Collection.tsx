@@ -19,14 +19,11 @@ const fetchModel = async (): Promise<ApiResponse> => {
 }
 
 const Collection: React.FC = () => {
-  const [searchParams] = useSearchParams();
-  const brandId = searchParams.get('brandId');
-  // const typeId = searchParams.get('typeId');
-
   const { data: carModels } = useQuery({ queryKey: ['model'], queryFn: fetchModel });
+  
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold text-center mb-6">Car {brandId ? 'Brands' : 'Types'}</h2>
+      <h2 className="text-2xl font-bold text-center mb-6">Car Models</h2>
       <div className="flex flex-wrap -mx-2">
         {carModels?.map(model => (
           <Link to={`/detail/${model.id}`} key={model.id} className="w-1/2 p-2">

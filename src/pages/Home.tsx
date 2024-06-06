@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from '../util/axios';
 import compactImage from "../assets/compact.jpg";
 import sportCarImage from "../assets/sport-car.jpg";
 import welcabImage from "../assets/welcab.jpg";
