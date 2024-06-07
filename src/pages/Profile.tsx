@@ -102,11 +102,11 @@ const Profile: React.FC = () => {
   }
 
   const save = async () => {
-    await axios.put('/users', { formUser })
-    .then(async () => {
+    await axios.put('/users', { ...formUser })
+    .then(async (response) => {
       dispatch({
         type: 'UPDATE_DATA',
-        data: formUser,
+        data: response.data,
       })
 
       setIsEdit(INIT_OPEN)

@@ -12,7 +12,7 @@ const UserButton: React.FC<UserButtonProps> = ({users, logOut}) => {
     const navigate = useNavigate()
 
     const handleOpenMenu = () => {
-        setOpenMenu(true)
+        setOpenMenu(!openMenu)
     }
 
     const changePage = (e) => {

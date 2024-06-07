@@ -35,7 +35,6 @@ export default [
     url: '/users',
     method: 'put',
     response: (a, b) => {
-      console.log(a, b)
       return  a.body;
     },
   },
